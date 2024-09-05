@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="formNote">
+        <form action="/NewNote" method="post">
+            <label for="textbox1">Ingrese el título de la nueva nota</label>
+            <div>
+                <input type="text" name="textbox1">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+    <div class="tableAgenda">
+        <table border="1">
+            <tbody>
+                {% for note in notes %}
+                    <tr> <td> {{note[0]}} </td> <td> {{note[1]}}  </td> </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
