@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Actualizar nota</title>
+</head>
+<body>
+    <div class="general">
+        <div class="formNote">
+            <form action="/UpdateNotePage/Update" method="post">
+                <p style="margin-bottom: 10px;">Actualizar la nota</p>
+                <div>
+                    <div style="display: inline-flex; flex-direction: column; margin-right: 10px;">
+                        <label for="textbox1"> Título </label>
+                        <input type="text" name="textbox1" maxlength="20" value="{{note[1]}}">
+                        <label for="fecha"> Fecha </label>
+                        <input type="date" id="fecha" name="fecha" value="{{note[2]}}">
+                        <input type="submit" value="Actualizar" style="margin-top: 5px;">
+                    </div>
+                    <div style="display: inline-flex; flex-direction: column">
+                        <label for="details"> Descripción </label>
+                        <textarea name="details" style="width: 200px; height: 100px;" maxlength="200">{{note[3]}}</textarea>
+                    </div>
+                    <input type="hidden" name="noteid" value="{{note[0]}}"> 
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
