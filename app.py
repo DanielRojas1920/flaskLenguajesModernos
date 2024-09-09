@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 
 notes = []
-connection = MySQLConnection(
+connection = MySQLConnection( #Le quité mis datos
     host= "localhost",
-    user="flaskAgenda",
-    password="flaskAgenda2024",
-    database = "flaskagenda"
+    user="Username",
+    password="Password",
+    database = "database"
 )
 
 
@@ -67,6 +67,7 @@ def update_note():
 
     connection.connect()
     connection.update('agendanotes', id ,insert_values)
+    
     notes = []
 
     for value in connection.select('agendanotes'):
